@@ -1,24 +1,58 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog app 
+The Recipe app keeps track of all the recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow to make them public so anyone can access them.
 
-Things you may want to cover:
+## Getting Started
+- clone the repository
+`git clone https://github.com/maxthestranger/rails_recipe.git`
+- navigate to the folder
+`cd BlogApp`
+- checkout the feature
+`git checkout process-data`
+- Install packages
+`bundle install`
+- Setup database
+`rails db:setup`
+- Run migration
+`rails db:migrate`
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Ruby on Rails
+- PostgreSQL
 
-* Configuration
+## Authors
 
-* Database creation
+👤 **Selma Belhadj**
 
-* Database initialization
+- GitHub: [@selma-belhadj](https://github.com/selma-belhadj)
+- Twitter: [@Bel_Selma16](https://twitter.com/Bel_Selma16)
+- LinkedIn: [@selma-belhadj](https://www.linkedin.com/in/selma-belhadj/)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **Max The Stranger**
+- GitHub: [@maxthestranger](https://github.com/maxthestranger)
+- Twitter: [@maxthestranger](https://twitter.com/maxthestranger)
+- LinkedIn: [@maxthestranger](https://www.linkedin.com/in/maxthestranger/)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/maxthestranger/rails_recipe/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
