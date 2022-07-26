@@ -13,16 +13,29 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/foods", type: :request do
-  
+
   # This should return the minimal set of attributes required to create a valid
   # Food. As you add validations to Food, be sure to
   # adjust the attributes here as well.
+  let(:user) { User.create!(name: 'Max') }
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: "test food",
+      measurement_unit: "grams",
+      price: "9.99",
+      quantity: "9.99",
+      user: user
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: nil,
+      measurement_unit: nil,
+      price: nil,
+      quantity: nil,
+      user: nil
+    }
   }
 
   describe "GET /index" do
@@ -33,25 +46,9 @@ RSpec.describe "/foods", type: :request do
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      food = Food.create! valid_attributes
-      get food_url(food)
-      expect(response).to be_successful
-    end
-  end
-
   describe "GET /new" do
     it "renders a successful response" do
       get new_food_url
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /edit" do
-    it "renders a successful response" do
-      food = Food.create! valid_attributes
-      get edit_food_url(food)
       expect(response).to be_successful
     end
   end
@@ -66,7 +63,7 @@ RSpec.describe "/foods", type: :request do
 
       it "redirects to the created food" do
         post foods_url, params: { food: valid_attributes }
-        expect(response).to redirect_to(food_url(Food.last))
+        expect(response).to redirect_to(foods_url)
       end
     end
 
@@ -79,37 +76,7 @@ RSpec.describe "/foods", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post foods_url, params: { food: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
-
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested food" do
-        food = Food.create! valid_attributes
-        patch food_url(food), params: { food: new_attributes }
-        food.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "redirects to the food" do
-        food = Food.create! valid_attributes
-        patch food_url(food), params: { food: new_attributes }
-        food.reload
-        expect(response).to redirect_to(food_url(food))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        food = Food.create! valid_attributes
-        patch food_url(food), params: { food: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).to have_http_status(422)
       end
     end
   end
