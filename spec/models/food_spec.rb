@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   before(:each) do
-    @user = User.new(name: "John Doe")
+    @user = User.new(name: 'John Doe')
     @food = Food.new(
-      name: "MyString",
-      measurement_unit: "grams",
-      price: "9.99",
-      quantity: "9.99",
+      name: 'MyString',
+      measurement_unit: 'grams',
+      price: '9.99',
+      quantity: '9.99',
       user: @user
     )
   end
@@ -42,7 +42,7 @@ RSpec.describe Food, type: :model do
   end
 
   it 'is a valid measurement_unit' do
-    @food.measurement_unit = "grams"
+    @food.measurement_unit = 'grams'
     expect(@food).to be_valid
 
     @food.measurement_unit = 23
