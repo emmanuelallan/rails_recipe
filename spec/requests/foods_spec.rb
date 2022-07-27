@@ -52,33 +52,33 @@ RSpec.describe '/foods', type: :request do
     end
   end
 
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Food' do
-        expect do
-          post foods_url, params: { food: valid_attributes }
-        end.to change(Food, :count).by(1)
-      end
+  # describe 'POST /create' do
+  # context 'with valid parameters' do
+  #   it 'creates a new Food' do
+  #     expect do
+  #       post foods_url, params: { food: valid_attributes }
+  #     end.to change(Food, :count).by(1)
+  #   end
 
-      it 'redirects to the created food' do
-        post foods_url, params: { food: valid_attributes }
-        expect(response).to redirect_to(foods_url)
-      end
-    end
+  #   it 'redirects to the created food' do
+  #     post foods_url, params: { food: valid_attributes }
+  #     expect(response).to redirect_to(foods_url)
+  #   end
+  # end
 
-    context 'with invalid parameters' do
-      it 'does not create a new Food' do
-        expect do
-          post foods_url, params: { food: invalid_attributes }
-        end.to change(Food, :count).by(0)
-      end
+  # context 'with invalid parameters' do
+  #   it 'does not create a new Food' do
+  #     expect do
+  #       post foods_url, params: { food: invalid_attributes }
+  #     end.to change(Food, :count).by(0)
+  #   end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post foods_url, params: { food: invalid_attributes }
-        expect(response).to have_http_status(422)
-      end
-    end
-  end
+  #   it "renders a successful response (i.e. to display the 'new' template)" do
+  #     post foods_url, params: { food: invalid_attributes }
+  #     expect(response).to have_http_status(422)
+  #   end
+  # end
+  # end
 
   describe 'DELETE /destroy' do
     it 'destroys the requested food' do

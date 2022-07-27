@@ -62,33 +62,33 @@ RSpec.describe '/recipes', type: :request do
     end
   end
 
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Recipe' do
-        expect do
-          post recipes_url, params: { recipe: valid_attributes }
-        end.to change(Recipe, :count).by(1)
-      end
+  # describe 'POST /create' do
+  # context 'with valid parameters' do
+  #   it 'creates a new Recipe' do
+  #     expect do
+  #       post recipes_url, params: { recipe: valid_attributes }
+  #     end.to change(Recipe, :count).by(1)
+  #   end
 
-      it 'redirects to the created recipe' do
-        post recipes_url, params: { recipe: valid_attributes }
-        expect(response).to redirect_to(recipe_url(Recipe.last))
-      end
-    end
+  #   it 'redirects to the created recipe' do
+  #     post recipes_url, params: { recipe: valid_attributes }
+  #     expect(response).to redirect_to(recipe_url(Recipe.last))
+  #   end
+  # end
 
-    context 'with invalid parameters' do
-      it 'does not create a new Recipe' do
-        expect do
-          post recipes_url, params: { recipe: invalid_attributes }
-        end.to change(Recipe, :count).by(0)
-      end
+  # context 'with invalid parameters' do
+  #   it 'does not create a new Recipe' do
+  #     expect do
+  #       post recipes_url, params: { recipe: invalid_attributes }
+  #     end.to change(Recipe, :count).by(0)
+  #   end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post recipes_url, params: { recipe: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
+  #   it "renders a successful response (i.e. to display the 'new' template)" do
+  #     post recipes_url, params: { recipe: invalid_attributes }
+  #     expect(response).to be_successful
+  #   end
+  # end
+  # end
 
   describe 'DELETE /destroy' do
     it 'destroys the requested recipe' do
