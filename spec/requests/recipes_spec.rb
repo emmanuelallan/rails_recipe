@@ -12,17 +12,18 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe '/foods', type: :request do
+RSpec.describe '/recipes', type: :request do
   # This should return the minimal set of attributes required to create a valid
-  # Food. As you add validations to Food, be sure to
+  # Recipe. As you add validations to Recipe, be sure to
   # adjust the attributes here as well.
   let(:user) { User.create!(name: 'Max', email: 'max@gmail.com', password: '1234567') }
   let(:valid_attributes) do
     {
-      name: 'test food',
-      measurement_unit: 'grams',
-      price: '9.99',
-      quantity: '9.99',
+      name: 'test recipe',
+      description: 'test description',
+      preparation_time: '10',
+      cooking_time: '1',
+      public: true,
       user:
     }
   end
@@ -30,68 +31,77 @@ RSpec.describe '/foods', type: :request do
   let(:invalid_attributes) do
     {
       name: nil,
-      measurement_unit: nil,
-      price: nil,
-      quantity: nil,
+      description: nil,
+      preparation_time: nil,
+      cooking_time: nil,
+      public: nil,
       user: nil
     }
   end
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Food.create! valid_attributes
-      get foods_url
+      Recipe.create! valid_attributes
+      get recipes_url
+      expect(response).to be_successful
+    end
+  end
+
+  describe 'GET /show' do
+    it 'renders a successful response' do
+      recipe = Recipe.create! valid_attributes
+      get recipe_url(recipe)
       expect(response).to be_successful
     end
   end
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_food_url
+      get new_recipe_url
       expect(response).to be_successful
     end
   end
 
   # describe 'POST /create' do
   # context 'with valid parameters' do
-  #   it 'creates a new Food' do
+  #   it 'creates a new Recipe' do
   #     expect do
-  #       post foods_url, params: { food: valid_attributes }
-  #     end.to change(Food, :count).by(1)
+  #       post recipes_url, params: { recipe: valid_attributes }
+  #     end.to change(Recipe, :count).by(1)
   #   end
 
-  #   it 'redirects to the created food' do
-  #     post foods_url, params: { food: valid_attributes }
-  #     expect(response).to redirect_to(foods_url)
+  #   it 'redirects to the created recipe' do
+  #     post recipes_url, params: { recipe: valid_attributes }
+  #     expect(response).to redirect_to(recipe_url(Recipe.last))
   #   end
   # end
 
   # context 'with invalid parameters' do
-  #   it 'does not create a new Food' do
+  #   it 'does not create a new Recipe' do
   #     expect do
-  #       post foods_url, params: { food: invalid_attributes }
-  #     end.to change(Food, :count).by(0)
+  #       post recipes_url, params: { recipe: invalid_attributes }
+  #     end.to change(Recipe, :count).by(0)
   #   end
 
   #   it "renders a successful response (i.e. to display the 'new' template)" do
-  #     post foods_url, params: { food: invalid_attributes }
-  #     expect(response).to have_http_status(422)
+  #     post recipes_url, params: { recipe: invalid_attributes }
+  #     expect(response).to be_successful
   #   end
   # end
   # end
 
   describe 'DELETE /destroy' do
-    it 'destroys the requested food' do
-      food = Food.create! valid_attributes
+    it 'destroys the requested recipe' do
+      recipe = Recipe.create! valid_attributes
       expect do
-        delete food_url(food)
-      end.to change(Food, :count).by(-1)
+        delete recipe_url(recipe)
+      end.to change(Recipe, :count).by(-1)
     end
 
-    it 'redirects to the foods list' do
-      food = Food.create! valid_attributes
-      delete food_url(food)
-      expect(response).to redirect_to(foods_url)
+    it 'redirects to the recipes list' do
+      recipe = Recipe.create! valid_attributes
+      delete recipe_url(recipe)
+      expect(response).to redirect_to(recipes_url)
     end
   end
 end
