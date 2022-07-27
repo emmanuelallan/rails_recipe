@@ -13,7 +13,6 @@ RSpec.describe Recipe, type: :model do
     )
   end
 
-
   it 'is valid with valid attributes' do
     expect(@recipe).to be_valid
   end
@@ -52,5 +51,4 @@ RSpec.describe Recipe, type: :model do
     @recipe.description = 'short description'
     expect(@recipe).to be_valid
   end
-
 end
