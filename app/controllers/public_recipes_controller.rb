@@ -6,8 +6,7 @@ class PublicRecipesController < ApplicationController
     @recipes = Recipe.all.where(public: true)
   end
 
-  def show
-  end
+  def show; end
 
   private
 
