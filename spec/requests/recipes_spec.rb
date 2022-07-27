@@ -17,13 +17,26 @@ RSpec.describe "/recipes", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Recipe. As you add validations to Recipe, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:user) { User.create!(name: 'Max', email:'max@gmail.com', password: '1234567') }
+  let(:valid_attributes) do {
+    name: 'test recipe',
+    description: 'test description',
+    preparation_time: '10',
+    cooking_time: '1',
+    public: true,
+    user: user
+    }
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+  let(:invalid_attributes) do {
+    name: nil,
+    description: nil,
+    preparation_time: nil,
+    cooking_time: nil,
+    public: nil,
+    user: nil
   }
+end
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -44,14 +57,6 @@ RSpec.describe "/recipes", type: :request do
   describe "GET /new" do
     it "renders a successful response" do
       get new_recipe_url
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /edit" do
-    it "renders a successful response" do
-      recipe = Recipe.create! valid_attributes
-      get edit_recipe_url(recipe)
       expect(response).to be_successful
     end
   end
@@ -79,36 +84,6 @@ RSpec.describe "/recipes", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post recipes_url, params: { recipe: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
-
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested recipe" do
-        recipe = Recipe.create! valid_attributes
-        patch recipe_url(recipe), params: { recipe: new_attributes }
-        recipe.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "redirects to the recipe" do
-        recipe = Recipe.create! valid_attributes
-        patch recipe_url(recipe), params: { recipe: new_attributes }
-        recipe.reload
-        expect(response).to redirect_to(recipe_url(recipe))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        recipe = Recipe.create! valid_attributes
-        patch recipe_url(recipe), params: { recipe: invalid_attributes }
         expect(response).to be_successful
       end
     end

@@ -16,14 +16,14 @@ RSpec.describe '/foods', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Food. As you add validations to Food, be sure to
   # adjust the attributes here as well.
-  let(:user) { User.create!(name: 'Max') }
+  let(:user) { User.create!(name: 'Max', email:'max@gmail.com', password: '1234567') }
   let(:valid_attributes) do
     {
       name: 'test food',
       measurement_unit: 'grams',
       price: '9.99',
       quantity: '9.99',
-      user:
+      user: user
     }
   end
 
