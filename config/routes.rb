@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   resources :foods
+  resources :public_recipes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,6 +10,6 @@ Rails.application.routes.draw do
   end
 
   get '/user' => "foods#index", :as => :user_root
-  
+
 
 end
