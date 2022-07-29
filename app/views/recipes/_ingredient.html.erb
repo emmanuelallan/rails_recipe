@@ -12,7 +12,7 @@
   </td>
 
   <td>
-    <%= button_to "Remove", recipe_recipe_food_path(recipe_id: recipe.id, id: ingredient.id), method: :delete %>
+    <%= button_to "Remove", recipe_recipe_food_path(recipe_id: recipe.id, id: ingredient.id), method: :delete, class: "inline_btn remove" %>
   </td>
 
 </tr>

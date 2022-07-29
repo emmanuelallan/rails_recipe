@@ -1,27 +1,15 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
-
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <p>
-    <strong>Public:</strong>
-    <%= "#{recipe.public ? 'Public' : 'Private'}" %>
-  </p>
-
-</div>
+<%= link_to recipe_path(recipe), class: "recipe" do %>
+  <div>
+    <h2>
+      <%= recipe.name %>
+    </h2>
+    <span>
+      <%= button_to "Remove", recipe, method: :delete, class: "inline_btn remove" %>
+    <span>
+  </div>
+  <div>
+    <p>
+      <%= recipe.description %>
+    </p>
+  </div>
+<% end %>
