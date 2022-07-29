@@ -1,20 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Add Food", new_food_path %>
+<%if @foods.empty? %>
+  <p>No foods found.</p>
+  <%= link_to "Add Food", new_food_path, class: "btn" %>
+<%else %>
+  <% if current_user %>
+    <%= link_to "Add Food", new_food_path, class: "btn" %>
+  <% end %>
 
-<table id="foods">
-  <thead>
-    <tr>
-      <th>Food</th>
-      <th>Measurement Unit</th>
-      <th>Unit Price</th>
-      <th>Qauntity</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @foods.each do |food| %>
-      <%= render food %>
-    <% end %>
-  </tbody>
-</table>
+  <table id="foods">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

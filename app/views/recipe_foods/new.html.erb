@@ -1,0 +1,7 @@
+<h1>New Ingredient</h1>
+
+<% if @foods.empty? %>
+  <p>No food for <%= current_user.name %>. Add new food <%= link_to "here", foods_path %> </p>
+<% else %>
+    <%= render "form", recipe_food: @recipe_food, food: @foods, recipe_id: @recipe.id %>
+<% end %>
