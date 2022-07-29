@@ -1,21 +1,23 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Blog app 
+# Recipe app
+
 The Recipe app keeps track of all the recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow to make them public so anyone can access them.
 
 ## Getting Started
+
 - clone the repository
-`git clone https://github.com/maxthestranger/rails_recipe.git`
+  `git clone https://github.com/maxthestranger/rails_recipe.git`
 - navigate to the folder
-`cd BlogApp`
+  `cd BlogApp`
 - checkout the feature
-`git checkout process-data`
+  `git checkout process-data`
 - Install packages
-`bundle install`
+  `bundle install`
 - Setup database
-`rails db:setup`
+  `rails db:setup`
 - Run migration
-`rails db:migrate`
+  `rails db:migrate`
 
 ## Built With
 
@@ -31,8 +33,8 @@ The Recipe app keeps track of all the recipes, ingredients, and inventory. It wi
 - Twitter: [@Bel_Selma16](https://twitter.com/Bel_Selma16)
 - LinkedIn: [@selma-belhadj](https://www.linkedin.com/in/selma-belhadj/)
 
-
 👤 **Max The Stranger**
+
 - GitHub: [@maxthestranger](https://github.com/maxthestranger)
 - Twitter: [@maxthestranger](https://twitter.com/maxthestranger)
 - LinkedIn: [@maxthestranger](https://www.linkedin.com/in/maxthestranger/)
