@@ -21,8 +21,7 @@ RSpec.describe '/foods', type: :request do
     {
       name: 'test food',
       measurement_unit: 'grams',
-      price: '9.99',
-      quantity: '9.99',
+      price: 9,
       user:
     }
   end
@@ -32,7 +31,6 @@ RSpec.describe '/foods', type: :request do
       name: nil,
       measurement_unit: nil,
       price: nil,
-      quantity: nil,
       user: nil
     }
   end

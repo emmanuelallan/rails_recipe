@@ -6,8 +6,7 @@ RSpec.describe Food, type: :model do
     @food = Food.new(
       name: 'MyString',
       measurement_unit: 'grams',
-      price: '9.99',
-      quantity: '9.99',
+      price: 9,
       user: @user
     )
   end
@@ -28,11 +27,6 @@ RSpec.describe Food, type: :model do
 
   it 'is not valid without a price' do
     @food.price = nil
-    expect(@food).to_not be_valid
-  end
-
-  it 'is not valid without a quantity' do
-    @food.quantity = nil
     expect(@food).to_not be_valid
   end
 
