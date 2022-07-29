@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="page_title">General Shopping list</h1>
+
+<% if @recipe_food.empty? %>
+  <p>No food to buy.</p>
+<% else %>
+  <div id="shopping_list">
+   <table id="foods">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <% @recipe_food.each do |ingredient| %>
+      <%= render "shopping_list", ingredient: ingredient  %>
+    <% end %>
+    </table>
+  </div>
+<% end %>
+
+

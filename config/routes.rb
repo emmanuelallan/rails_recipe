@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   resources :foods
   resources :public_recipes
+  resources :shopping_lists
   resources :recipes do
     resources :recipe_foods
   end
