@@ -1,10 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<h2 class="page_title">
+  <%= @recipe.name %>
+</h2>
 
-<%= render @recipe %>
-
-<div>
-  <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe) %>
+<div class="recipe_info">
+  <div>
+    <p>
+      <strong>
+        Preparation time: <%= @recipe.preparation_time %>
+      </strong>
+    </p>
+    <p>
+      <strong>
+        Cooking time: <%= @recipe.cooking_time %>
+      </strong>
+    </p>
+    <p class="desc">
+        <%= @recipe.description %>
+    </p>
+  </div>
+  <div>
+    <p>
+      <strong>
+        This Recipe is: <%= @recipe.public ? 'Public' : 'Private' %>
+      </strong>
+    </p>
+  </div>
 </div>
+
+<div class="btn_shell_two">
+  <%= link_to "Generate Shopping List", shopping_lists_path, class: "btn" %>
+  <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "btn" %>
+</div>
+<hr />
 
 <% if @ingridients.empty? %>
   <p>No ingridients</p>

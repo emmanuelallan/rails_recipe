@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
-
 <h1 class="page_title">Public Recipes</h1>
 
 <% if @recipes.empty? %>
   <p>No Public Recipes found.</p>
 <% else %>
-  <div id="public_recipes">
+  <div class="public_recipes">
     <% @recipes.each do |recipe| %>
       <%= render "public_recipe", recipe: recipe  %>
-      <%= link_to "View Recipe", recipe_path(recipe) %>
     <% end %>
   </div>
 <% end %>

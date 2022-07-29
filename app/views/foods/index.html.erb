@@ -1,11 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
 <%if @foods.empty? %>
   <p>No foods found.</p>
-  <%= link_to "Add Food", new_food_path, class: "btn" %>
+  <div class="btn_shell">
+    <%= link_to "Add Food", new_food_path, class: "btn" %>
+  </div>
 <%else %>
   <% if current_user %>
+    <div class="btn_shell">
     <%= link_to "Add Food", new_food_path, class: "btn" %>
+  </div>
   <% end %>
 
   <table id="foods">
