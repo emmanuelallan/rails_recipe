@@ -20,7 +20,7 @@
     </thead>
     <tbody>
       <% @ingridients.each do |ingredient| %>
-        <%= render ingredient %>
+        <%= render "ingredient",  ingredient: ingredient, recipe: @recipe %>
       <% end %>
     </tbody>
   </table>

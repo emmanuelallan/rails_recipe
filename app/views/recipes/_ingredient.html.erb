@@ -1,0 +1,18 @@
+<tr id="<%= dom_id ingredient %>">
+  <td>
+    <%= ingredient.food.name %>
+  </td>
+
+  <td>
+    <%= ingredient.quantity %>
+  </td>
+
+  <td>
+    <%= ingredient.food.price * ingredient.quantity || 0 %>
+  </td>
+
+  <td>
+    <%= button_to "Remove", recipe_recipe_food_path(recipe_id: recipe.id, id: ingredient.id), method: :delete %>
+  </td>
+
+</tr>
