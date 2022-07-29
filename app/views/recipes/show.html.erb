@@ -3,9 +3,25 @@
 <%= render @recipe %>
 
 <div>
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
-
-  <%= link_to "Add new food", new_food_path %>
+  <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe) %>
 </div>
+
+<% if @ingridients.empty? %>
+  <p>No ingridients</p>
+<% else %>
+  <table id="foods">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingridients.each do |ingredient| %>
+        <%= render ingredient %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

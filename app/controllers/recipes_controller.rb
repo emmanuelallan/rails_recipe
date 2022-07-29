@@ -3,12 +3,13 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
+    @ingridients = RecipeFood.where(recipe_id: params[:id]).includes(:food)
   end
 
   # GET /recipes/new

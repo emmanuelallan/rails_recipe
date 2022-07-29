@@ -1,0 +1,18 @@
+<tr id="<%= dom_id ingridient %>">
+  <td>
+    <%= ingridient.food.name %>
+  </td>
+
+  <td>
+    <%= ingridient.quantity %>
+  </td>
+
+  <td>
+    <%= ingridient.food.price * ingredient.quantity || 0 %>
+  </td>
+
+  <td>
+    <%= button_to "Remove", ingridient, method: :delete %>
+  </td>
+
+</tr>
