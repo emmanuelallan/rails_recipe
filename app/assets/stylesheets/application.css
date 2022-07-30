@@ -194,6 +194,8 @@ table td {
 .add {
   background: var(--primary);
   color: white;
+  text-decoration: none;
+
 }
 
 .add:hover {
