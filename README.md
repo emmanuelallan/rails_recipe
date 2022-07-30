@@ -9,9 +9,9 @@ The Recipe app keeps track of all the recipes, ingredients, and inventory. It wi
 - clone the repository
   `git clone https://github.com/maxthestranger/rails_recipe.git`
 - navigate to the folder
-  `cd BlogApp`
+  `cd rails_recipe`
 - checkout the feature
-  `git checkout process-data`
+  `git checkout release_1.0.0`
 - Install packages
   `bundle install`
 - Setup database

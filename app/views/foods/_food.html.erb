@@ -10,9 +10,10 @@
   <td>
     <%= food.price %>
   </td>
-
+ <% if current_user %>
   <td>
     <%= button_to "Remove", food, method: :delete, class: "inline_btn remove" %>
   </td>
+  <% end %>
 
 </tr>
