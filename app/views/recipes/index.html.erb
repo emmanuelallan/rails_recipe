@@ -1,10 +1,14 @@
 <h1 class="page_title">Recipes</h1>
-<div class="btn_shell">
+<% if current_user %>
+  <div class="btn_shell">
     <%= link_to "New Recipe", new_recipe_path, class: "btn" %>
-</div>
+  </div>
 
-<div class="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-  <% end %>
-</div>
+  <div class="recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render recipe %>
+    <% end %>
+  </div>
+<% else %>
+  <p>You need to be logged in to see your recipes</p>
+<% end %>

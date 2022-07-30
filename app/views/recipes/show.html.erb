@@ -27,10 +27,12 @@
   </div>
 </div>
 
-<div class="btn_shell_two">
-  <%= link_to "Generate Shopping List", shopping_lists_path, class: "btn" %>
-  <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "btn" %>
-</div>
+<% if current_user && current_user.id == @recipe.user_id %>
+  <div class="btn_shell_two">
+    <%= link_to "Generate Shopping List", shopping_lists_path, class: "btn" %>
+    <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "btn" %>
+  </div>
+<% end %>
 <hr />
 
 <% if @ingridients.empty? %>

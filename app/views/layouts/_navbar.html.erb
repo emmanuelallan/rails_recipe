@@ -1,6 +1,6 @@
 <header class="header">
     <div class="brand">
-        <%= link_to "Recipe App", foods_path %>
+        <%= link_to "Recipe App", root_path %>
     </div>
     <nav class="nav_bar">
         <ul class="nav_items">
@@ -8,9 +8,9 @@
                 <%= link_to "Public Recipe", public_recipes_path %>
             </li>
             <% if current_user %>
-             <li>
-                <%= link_to "Foods", foods_path %>
-            </li>
+                <li>
+                    <%= link_to "Foods", foods_path %>
+                </li>
                 <li>
                     <%= link_to "My Recipes", recipes_path %>
                 </li>

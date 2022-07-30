@@ -1,21 +1,15 @@
-<div class = "recipe">
+<div class="recipe_wrapper">
+  <%= link_to recipe_path(recipe), class: "recipe" do %>
     <div>
-    <h2>
-      <%= recipe.name %>
-    </h2>
+      <h2>
+        <%= recipe.name %>
+      </h2>
       <p>
         <%= recipe.description %>
       </p>
     </div>
-    <div>
-      <span>
-        <%= link_to "Recipe details", recipe_path(recipe), class: "inline_btn add" %>
-      </span>
-    </div>
-    <div>
-      <span>
-        <%= button_to "Remove", recipe, method: :delete, class: "inline_btn remove" %>
-      <span>
-    </div>
-  
+  <% end %>
+  <div class="plus">
+    <%= button_to "Remove", recipe, method: :delete, class: "inline_btn remove" %>
+  </div>
 </div>
