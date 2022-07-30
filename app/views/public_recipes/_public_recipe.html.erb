@@ -1,0 +1,18 @@
+<%= link_to recipe_path(recipe), class: "public_recipe" do %>
+  <div>
+      <h2>
+        <%= recipe.name %>
+      </h2>
+      <span>
+        By: <%= recipe.user.name %>
+      <span>
+    </div>
+    <div>
+      <p>
+        Total Food Items: <%= recipe.foods.count %>
+      </p>
+      <p>
+        Total Price: <%= recipe.foods.sum(:price) %>
+      </p>
+    </div>
+<% end %>

@@ -1,0 +1,20 @@
+<tr id="<%= dom_id food %>">
+  <td>
+    <%= food.name %>
+  </td>
+
+  <td>
+    <%= food.measurement_unit %>
+  </td>
+
+  <td>
+    <%= food.price %>
+  </td>
+
+  <td>
+    <% if current_user && current_user.id == food.user_id %>
+      <%= button_to "Remove", food, method: :delete, class: "inline_btn remove" %>
+    <% end %>
+  </td>
+
+</tr>

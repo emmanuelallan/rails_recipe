@@ -1,0 +1,19 @@
+<tr id="<%= dom_id ingredient %>">
+  <td>
+    <%= ingredient.food.name %>
+  </td>
+
+  <td>
+    <%= ingredient.quantity %>
+  </td>
+
+  <td>
+    <%= ingredient.food.price * ingredient.quantity || 0 %>
+  </td>
+
+  <td>
+    <% if current_user && current_user.id == recipe.user_id %>
+      <%= button_to "Remove", recipe_recipe_food_path(recipe_id: recipe.id, id: ingredient.id), method: :delete, class: "inline_btn remove" %>
+    <% end %>
+  </td>
+</tr>

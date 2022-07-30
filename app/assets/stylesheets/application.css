@@ -13,3 +13,297 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+  --dark: #091a40;
+  --raidus: 4px;
+  --white: #fff;
+  --font: 'Righteous', cursive;
+  --border: 3px solid var(--dark);
+  --primary: #79b779;
+  --trans: all 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  transition: all 0.2s ease-in-out;
+  font-family: var(--font);
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.header {
+  padding: 0 1.6rem;
+  display: flex;
+  border: var(--border);
+  border-radius: var(--radius);
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.header .nav_bar {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .nav_bar .nav_items {
+  display: flex;
+  list-style: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand a {
+  color: var(--primary);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header .nav_bar .nav_items li a {
+  padding: 1rem 1rem;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.header .nav_bar .nav_items li a:hover {
+  color: var(--primary);
+}
+
+.header .nav_bar .nav_items li a.active {
+  color: var(--primary);
+}
+
+.header .nav_bar .nav_items li a.active::after {
+  content: '';
+  height: 3px;
+  position: absolute;
+  width: 80%;
+  padding: 1px;
+  z-index: 2;
+  left: 12%;
+  bottom: 10px;
+  background: var(--primary);
+}
+
+.page_title {
+  font-size: 44px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.message {
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.btn_shell {
+  text-align: right;
+  margin: 0 0 15px 0;
+  display: block;
+}
+
+.btn_shell_two {
+  text-align: right;
+  margin: 0 0 15px 0;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn,
+input[type='submit'] {
+  border-radius: var(--radius);
+  padding: 10px 45px;
+  border: var(--border);
+  color: var(--dark);
+  font-family: var(--font);
+  font-size: inherit;
+  transition: var(--trans);
+  background: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover,
+input[type='submit']:hover {
+  cursor: pointer;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th,
+table td {
+  border: var(--border);
+  border-radius: var(--raidus);
+  padding: 10px;
+}
+
+.inline_btn {
+  padding: 4px 10px;
+  border: none;
+  border-radius: var(--raidus);
+}
+
+.inline_btn:hover {
+  background-color: var(--dark);
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.remove {
+  background: #ed411b;
+  color: white;
+}
+
+.remove:hover {
+  background: rgb(184, 2, 2);
+  color: white;
+}
+
+.add {
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+}
+
+.add:hover {
+  background: #5f8f5f;
+  color: white;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+}
+
+input,
+select,
+textarea {
+  border: var(--border);
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 0.5rem;
+  font-family: var(--font);
+}
+
+input::placeholder {
+  color: #091a40c7;
+  font-size: 16px;
+  font-family: var(--font);
+  padding-left: 5px;
+}
+
+/* recipes */
+.public_recipes,
+.recipes {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.recipe_wrapper {
+  position: relative;
+}
+
+.plus {
+  position: absolute;
+  right: 8%;
+  top: 36%;
+}
+
+.public_recipe,
+.recipe {
+  border: var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--trans);
+}
+
+.public_recipe:hover,
+.recipe:hover {
+  cursor: pointer;
+  background: #79b7790c;
+  border-color: var(--primary);
+}
+
+.recipe_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.desc {
+  max-width: 70%;
+  margin-top: 10px;
+}
+
+.form_link {
+  color: var(--dark);
+  display: block;
+  max-width: 80%;
+  margin-left: auto;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.btn_logout {
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: var(--dark);
+  display: block;
+  padding: 1rem 1rem;
+  position: relative;
+  text-decoration: none;
+  margin-top: 3px;
+  font-family: var(--font);
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.btn_logout:hover {
+  color: var(--primary);
+  cursor: pointer;
+}

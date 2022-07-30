@@ -1,0 +1,28 @@
+<%if @foods.empty? %>
+  <p>No foods found.</p>
+  <div class="btn_shell">
+    <%= link_to "Add Food", new_food_path, class: "btn" %>
+  </div>
+<%else %>
+  <% if current_user %>
+    <div class="btn_shell">
+    <%= link_to "Add Food", new_food_path, class: "btn" %>
+  </div>
+  <% end %>
+
+  <table id="foods">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

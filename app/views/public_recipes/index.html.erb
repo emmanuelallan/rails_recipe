@@ -1,0 +1,11 @@
+<h1 class="page_title">Public Recipes</h1>
+
+<% if @recipes.empty? %>
+  <p>No Public Recipes found.</p>
+<% else %>
+  <div class="public_recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render "public_recipe", recipe: recipe  %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,24 +1,60 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Recipe app
 
-Things you may want to cover:
+The Recipe app keeps track of all the recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow to make them public so anyone can access them.
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+- clone the repository
+  `git clone https://github.com/maxthestranger/rails_recipe.git`
+- navigate to the folder
+  `cd rails_recipe`
+- checkout the feature
+  `git checkout release_1.0.0`
+- Install packages
+  `bundle install`
+- Setup database
+  `rails db:setup`
+- Run migration
+  `rails db:migrate`
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby
+- Ruby on Rails
+- PostgreSQL
 
-* Database initialization
+## Authors
 
-* How to run the test suite
+👤 **Selma Belhadj**
 
-* Services (job queues, cache servers, search engines, etc.)
+- GitHub: [@selma-belhadj](https://github.com/selma-belhadj)
+- Twitter: [@Bel_Selma16](https://twitter.com/Bel_Selma16)
+- LinkedIn: [@selma-belhadj](https://www.linkedin.com/in/selma-belhadj/)
 
-* Deployment instructions
+👤 **Max The Stranger**
 
-* ...
+- GitHub: [@maxthestranger](https://github.com/maxthestranger)
+- Twitter: [@maxthestranger](https://twitter.com/maxthestranger)
+- LinkedIn: [@maxthestranger](https://www.linkedin.com/in/maxthestranger/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/maxthestranger/rails_recipe/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
