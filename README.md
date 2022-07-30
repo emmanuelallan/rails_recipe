@@ -2,16 +2,16 @@
 
 # Recipe app
 
+![](./app//assets/images/screenshot.png)
+
 The Recipe app keeps track of all the recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow to make them public so anyone can access them.
 
 ## Getting Started
 
-- clone the repository
+- Clone the repository
   `git clone https://github.com/maxthestranger/rails_recipe.git`
-- navigate to the folder
+- Navigate to the folder
   `cd rails_recipe`
-- checkout the feature
-  `git checkout release_1.0.0`
 - Install packages
   `bundle install`
 - Setup database
